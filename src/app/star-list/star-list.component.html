@@ -1,0 +1,44 @@
+<div class="container custom-container-2">
+
+  <!-- Show it when there is no Star -->
+  <div class="no-data text-center" *ngIf="Star.length == 0">
+    <p>Loading starwars stars...</p>
+    
+  </div>
+
+  <!-- Star list table, it hides when there is no star -->
+  <div *ngIf="Star.length !== 0">
+    <h3 class="mb-3 text-center">Star List</h3>
+
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+              <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Height</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Homeworld</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let star of Star">
+              <td>{{star.id}}</td>
+            <td>{{star.name}}</td>
+            <td>{{star.height}}</td>
+            <td>{{star.gender}}</td>
+            <td>{{star.homeworld}}</td>
+            <td>
+              <!-- <span class="edit" routerLink="/star/{{star.id}}">Details</span> -->
+              <span class="edit" routerLink="/star/1">Details</span>
+              <!-- <span class="delete" (click)="deleteStar(star.id)">Delete</span> -->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>

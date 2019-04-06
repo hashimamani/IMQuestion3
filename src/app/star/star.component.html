@@ -1,0 +1,39 @@
+<div class="container custom-container-2">
+
+  <!-- Show it when there is no star -->
+  <div class="no-data text-center" *ngIf="Star.length == 0">
+    <p>Loading star...</p>
+    
+  </div>
+
+  <!-- Star list table, it hides when there is no star -->
+  <div *ngIf="Star.length !== 0">
+    <h3 class="mb-3 text-center">Star List</h3>
+
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Height</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Homeworld</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{Star.name}}</td>
+            <td>{{Star.height}}</td>
+            <td>{{Star.gender}}</td>
+            <td>{{Star.homeworld}}</td>
+            <td>              
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>
